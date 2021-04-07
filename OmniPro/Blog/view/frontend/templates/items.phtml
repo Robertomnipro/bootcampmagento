@@ -1,0 +1,88 @@
+<?php
+
+/** @var \OmniPro\Blog\Block\Index $block */
+
+$viewModel = $block->getViewModel();
+
+?>
+<style>
+    .item_post {
+        padding: 10px;
+        margin: 10px 10px;
+        border-style: solid;
+        border-color: black;
+        border-width: 2px;
+        border-radius: 5px;
+    }
+
+    .list_item {
+        display: grid;
+        grid-template-columns: auto 200px;
+        padding-top: 10px;
+        width: 100%;
+    }
+    .image_post{
+        width: 150px;
+    }
+    .content_item{
+        display: grid;
+        grid-template-columns: 200px auto;
+    }
+    .title_post{
+        display: grid;
+        grid-template-columns: auto 200px;
+    }
+</style>
+<div class="list_item">
+    <?php
+
+    foreach ($viewModel->getPosts() as $key=>$post){
+        // echo $post->getImage();
+        if($post->getImage() != ''){
+            echo '
+            <div class="item_post">
+    
+                <div class="title_post">
+                    <h4>'.$post->getTitle(). '</h4>
+                    <p>'.$post->getCreatedAt().' </p>
+                
+                </div>
+
+                <div class= "content_item">
+                    <img  class =  "image_post" src="'.$post->getImage().'" alt="no image">
+                    <p>'.$post->getContent().'</p>
+                
+                </div>
+
+
+            </div>
+            <div ></div>
+           
+            ';
+
+        }else{
+            echo '
+
+            <div class="item_post">
+
+                <div class="title_post">
+                    <h4>'.$post->getTitle(). '</h4>
+                    <p>'.$post->getCreatedAt().' </p>
+                
+                </div>
+    
+    
+                <div class= "content">
+                    <p>'.$post->getContent().'</p>
+                
+                </div>
+    
+    
+            </div>
+            <div ></div>
+            ';
+        }
+    }
+    ?>
+
+</div> 

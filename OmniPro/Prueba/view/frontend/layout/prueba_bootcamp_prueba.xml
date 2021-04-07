@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <!-- <block   name="OmniPro_Prueba_Name" template="OmniPro_Prueba::prueba-template.phtml" >
+                <arguments>
+                    <argument name = "view_model" xsi:type="object">OmniPro\Prueba\ViewModel\BlogViewModel</argument>
+                </arguments>
+            </block> -->
+              <block   name="omnipro_prueba_title" template="OmniPro_Prueba::title.phtml" >
+                <arguments>
+                    <argument name = "view_model" xsi:type="object">OmniPro\Prueba\ViewModel\BlogViewModel</argument>
+                </arguments>
+            </block>
+              <block   name="omnipro_prueba_form" template="OmniPro_Prueba::form.phtml" >
+                <arguments>
+                    <argument name = "view_model" xsi:type="object">OmniPro\Prueba\ViewModel\BlogViewModel</argument>
+                </arguments>
+            </block>
+              <block   name="omnipro_prueba_item" template="OmniPro_Prueba::items.phtml" >
+                <arguments>
+                    <argument name = "view_model" xsi:type="object">OmniPro\Prueba\ViewModel\BlogViewModel</argument>
+                </arguments>
+            </block>
+            
+        </referenceContainer>
+        
+    </body>
+</page>

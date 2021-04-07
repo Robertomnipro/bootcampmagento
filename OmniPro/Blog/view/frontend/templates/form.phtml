@@ -1,0 +1,110 @@
+<?php
+
+/** @var \OmniPro\Blog\Block\Template $block */
+?>
+
+<style>
+    .container_form {
+        display: grid;
+        grid-template-columns: auto;
+        padding: 10px 10px 50px;
+        
+    }
+
+    .form_post {
+
+        border-style: solid;
+        border-color: black;
+        border-width: 2px;
+        border-radius: 5px;
+    }
+
+    .title_form {
+        margin-left: 10px;
+    }
+
+    input.input_text[type=text] {
+        border: 2px solid black;
+        margin-bottom: 1em;
+    }
+
+    input.input_text_email[type=text] {
+        width: 70%;
+        border: 2px solid black;
+        margin-bottom: 1em;
+    }
+
+    .input_textarea {
+        margin-bottom: 1em;
+        resize: none;
+        border-width: 2px;
+        border-color: black;
+    }
+
+    .row {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .button_save {
+        display: block;
+        width: 90%;
+        margin-left: 2em;
+        margin-right: 1em;
+        border-width: 2px;
+        border-color: black;
+
+    }
+
+    .button_form {
+        border-color: black;
+        border-width: 2px;
+    }
+
+    .button_form {
+        display: block;
+        width: 100%;
+        border-color: black;
+        border-width: 2px;
+    }
+    @media only screen and (min-width: 768px) {
+     /* For desktop: */
+     .container_form {
+        display: grid;
+        grid-template-columns: auto auto;
+        padding: 10px 10px 50px;
+     }
+     .row {
+        display: grid;
+        grid-template-columns: auto 200px;
+        margin: 10px;
+    }
+    }
+</style>
+
+<form class=form_post action="<?php echo $block->getUrl('blog/index/save') ?>" method="post">
+    <h3 class='title_form'> New blog post</h3>
+    <div class="container_form">
+        <div class="column">
+            <input class="input_text" type="text" id="titulo" name="titulo" placeholder="My Post title" required/>
+            <textarea class="input_textarea" type="textarea" id="contenido" name="contenido" placeholder="Here all my important text!" required></textarea>
+            <input class="input_text_email" type="text" id="email" name="email" placeholder="Email address" required/>
+            <div class="row">
+                <p>/MyPc/Data/Images/thisisaimage.jpg</p>
+                <button class="button_form" placeholder="My Post title">
+                    Upload image
+                </button>
+            </div>
+        </div>
+        <div class="column">
+            <button class="button_save"  placeholder="My Post title">
+                Save post
+            </button>
+
+        </div>
+
+    </div>
+
+    </div>
+
+</form>
