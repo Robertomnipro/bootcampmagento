@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="OmniPro_Blog::blog" title="OmniProBlog" module="OmniPro_Blog" sortOrder="10" resource="OmniPro_Blog::menu_blog"/>
-        <add id="OmniPro_Blog::post" title="OmniPro Post" module="OmniPro_Blog" sortOrder="9" action="adminhtml/system_config/edit/section/adminBlog" resource="Magento_Backend::content" parent="OmniPro_Blog::blog"/>
+        <add id="OmniPro_Blog::blog" title="OmniPro Blog" module="OmniPro_Blog" sortOrder="10" resource="OmniPro_Blog::menu_blog"/>
+        <add id="OmniPro_Blog::post" title="OmniPro Post" module="OmniPro_Blog" sortOrder="9" action="omnipro_blog/post/index" resource="Magento_Backend::content" parent="OmniPro_Blog::blog"/>
         
     </menu>
 </config>
