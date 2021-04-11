@@ -9,7 +9,7 @@
             <label>Omni.Pro Config </label>
             <tab>omnipro</tab>
             <resource>OmniPro_DataPathTest::acl_rule</resource>
-            <group id="omniprogroup" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1 " showInStore="1">
+            <group id="omniprogroup" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="1">
                 <label>General Configuration</label>
                 <field id="enable" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Module Enable</label>
