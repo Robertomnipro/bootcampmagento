@@ -1,28 +1,12 @@
 <?php
-namespace OmniPro\Blog\Controller\Adminhtml\Create;
+namespace OmniPro\Blog\Controller\Adminhtml\Post;
 
-class Index extends \Magento\Backend\App\Action
+use Magento\Backend\App\Action;
+use OmniPro\Blog\Model\Blog;
+
+class Create extends Action
 {
-    const ADMIN_RESOURCE = 'OmniPro_Blog::Index';
-
-    const PAGE_TITLE = 'OmniPro Blog';
-
-    /**
-     * @var \Magento\Framework\View\Result\PageFactory
-     */
-    protected $_pageFactory;
-
-    /**
-     * @param \Magento\Backend\App\Action\Context $context
-     */
-    public function __construct(
-       \Magento\Backend\App\Action\Context $context,
-       \Magento\Framework\View\Result\PageFactory $pageFactory
-    )
-    {
-        $this->_pageFactory = $pageFactory;
-        return parent::__construct($context);
-    }
+   
 
     /**
      * Index action
@@ -31,22 +15,15 @@ class Index extends \Magento\Backend\App\Action
      */
     public function execute()
     {
-         /** @var \Magento\Framework\View\Result\Page $resultPage */
-         $resultPage = $this->_pageFactory->create();
-         $resultPage->setActiveMenu(static::ADMIN_RESOURCE);
-         $resultPage->addBreadcrumb(__(static::PAGE_TITLE), __(static::PAGE_TITLE));
-         $resultPage->getConfig()->getTitle()->prepend(__(static::PAGE_TITLE));
+        $this->_view->loadLayout();
+        $this->_view->renderLayout();
 
-         return $resultPage;
-    }
-
-    /**
-     * Is the user allowed to view the page.
-    *
-    * @return bool
-    */
-    protected function _isAllowed()
-    {
-        return $this->_authorization->isAllowed(static::ADMIN_RESOURCE);
+        $blogDatas = $this->getRequest()->getParam('post');
+        if(is_array($blogDatas)) {
+            $contact = $this->_objectManager->create(Blog::class);
+            $contact->setData($blogDatas)->save();
+            $resultRedirect = $this->resultRedirectFactory->create();
+            return $resultRedirect->setPath('*/*/index');
+        }
     }
 }

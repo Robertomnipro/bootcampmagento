@@ -6,7 +6,7 @@
         </tab>
         <section id="omnipro_selection" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
             <class>separator-top</class>
-            <label>Omni.Pro Config </label>
+            <label>OmniPro Config </label>
             <tab>omnipro</tab>
             <resource>OmniPro_DataPathTest::acl_rule</resource>
             <group id="omniprogroup" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="0" showInStore="1">
