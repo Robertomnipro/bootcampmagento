@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @var 
+ */
+
+$viewModel = $block->getViewModel();
+
+?>
+
+<div data-magr-init='["Prueba-magento":{
+    "prueba parametro":"<?= $viewModel->getConfig() ?>"
+}]'>
+
+<div class="container">
+    <input type="button" value="Ejecutar">
+</div>
+
+</div>
