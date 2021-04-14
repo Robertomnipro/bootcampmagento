@@ -1,3 +1,51 @@
+<style>
+    .item_post {
+        padding: 10px;
+        margin: 10px 10px;
+        border-style: solid;
+        border-color: black;
+        border-width: 2px;
+        border-radius: 5px;
+    }
+
+    .list_item {
+        display: grid;
+        grid-template-columns: auto 200px;
+        padding-top: 10px;
+        width: 100%;
+    }
+
+    .image_post {
+        width: 150px;
+    }
+
+    .content_item {
+        display: grid;
+        grid-template-columns: 200px auto;
+    }
+
+    .title_post {
+        display: grid;
+        grid-template-columns: auto 200px;
+    }
+</style>
+
+
 <h1 data-bind="text: textoPrueba"></h1>
 <h2 data-bind="text: variable1"></h2>
 <button data-bind="click: cambiarVariable">Click</button>
+
+
+<div class="list_item">
+
+    <div data-bind="foreach: blogItems">
+        <div class="item_post">
+            <h4 data-bind="text: title"></h4>
+            <div class="content_item">
+                <img class="image_post" data-bind="text: img" alt="no image">
+                <p data-bind="text: content"></p>
+            </div>
+        </div>
+    </div>
+
+</div>
