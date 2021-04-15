@@ -71,7 +71,7 @@ interface BlogInterface {
      */
     public function setImg($img);
 
-    /**
+     /**
      * get Img
      *
      * @return string

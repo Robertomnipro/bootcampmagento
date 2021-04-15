@@ -1,0 +1,84 @@
+<!-- <style>
+    .item_post {
+        padding: 10px;
+        margin: 10px 10px;
+        border-style: solid;
+        border-color: black;
+        border-width: 2px;
+        border-radius: 5px;
+    }
+
+    .list_item {
+        display: grid;
+        grid-template-columns: auto 200px;
+        padding-top: 10px;
+        width: 100%;
+    }
+
+    .image_post {
+        width: 150px;
+    }
+
+    .content_item {
+        display: grid;
+        grid-template-columns: 200px auto;
+    }
+
+    .title_post {
+        display: grid;
+        grid-template-columns: auto 200px;
+    }
+</style> -->
+
+
+<!-- <h1 data-bind="text: textoPrueba"></h1>
+<h2 data-bind="text: variable1"></h2>
+<button data-bind="click: cambiarVariable">Click</button> -->
+
+<form class=form_post action="" data-bind="submit: sendBlog" method="post">
+    <h3 class='title_form'> New blog post</h3>
+    <div class="container_form">
+        <div class="column">
+            <input class="input_text" type="text" id="titulo" name="titulo" placeholder="My Post title" data-bind="value: title " required/>
+            <textarea class="input_textarea" type="textarea" id="contenido" name="contenido" placeholder="Here all my important text!" data-bind="value: content" required></textarea>
+            <input class="input_text_email" type="text" id="email" name="email" placeholder="Email address" data-bind="value: email" required/>
+            <div class="row">
+                <p>/MyPc/Data/Images/thisisaimage.jpg</p>
+                <button class="button_form" placeholder="My Post title">
+                    Upload image
+                </button>
+            </div>
+        </div>
+        <div class="column">
+            <button class="button_save"  placeholder="My Post title">
+                Save post
+            </button>
+
+        </div>
+
+    </div>
+
+    </div>
+
+</form>
+
+
+<div class="list_item">
+
+    <div data-bind="foreach: blogItems">
+        <div class="item_post">
+            <div class="item_post">
+                <h4 data-bind="text: title"></h4>
+                <p ></p>
+
+            </div>
+            <div class="content_item">
+                <img class="image_post" data-bind="text: img" alt="no image">
+                <p data-bind="text: content"></p>
+            </div>
+        </div>
+    </div>
+
+    <div ></div>
+
+</div>

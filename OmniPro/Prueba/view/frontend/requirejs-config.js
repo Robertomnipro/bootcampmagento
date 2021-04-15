@@ -4,4 +4,4 @@ var config = {
             'blogItems':'OmniPro_Prueba/js/blogItems'
         }
     }
-};
+}; 
