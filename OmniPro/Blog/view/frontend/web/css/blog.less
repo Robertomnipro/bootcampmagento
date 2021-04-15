@@ -1,6 +1,152 @@
 .blog-index-index {// name layout
-    .blog_title {
+    //style title
+    .blog-title {
         display: grid;
         grid-template-columns: auto 200px;
+    }
+    .title-blog{
+        text-align: center;
+        font-weight: bold;
+    }
+
+    //style form
+    .container_form {
+        display: grid;
+        grid-template-columns: auto;
+        padding: 10px 10px 50px;
+        
+    }
+
+    .form_post {
+
+        border-style: solid;
+        border-color: black;
+        border-width: 2px;
+        border-radius: 5px;
+    }
+
+    .title_form {
+        margin-left: 10px;
+    }
+
+    input.input_text[type=text] {
+        border: 2px solid black;
+        margin-bottom: 1em;
+    }
+
+    input.input_text_email[type=text] {
+        
+        border: 2px solid black;
+        margin-bottom: 1em;
+    }
+
+    .input_textarea {
+        margin-bottom: 1em;
+        resize: none;
+        border-width: 2px;
+        border-color: black;
+    }
+
+    .row {
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .button_save {
+        display: block;
+        width: 100%;
+        border-width: 2px;
+        border-color: black;
+
+    }
+
+    .button_form {
+        border-color: black;
+        border-width: 2px;
+    }
+
+    .button_form {
+        display: block;
+        width: 100%;
+        border-color: black;
+        border-width: 2px;
+    }
+
+    // style items
+    .item_post {
+        display: grid;
+        grid-template-columns: auto;
+        padding: 10px;
+        margin: 10px 10px;
+        border-style: solid;
+        border-color: black;
+        border-width: 2px;
+        border-radius: 5px;
+    }
+
+    .list_item {
+        display: grid;
+        grid-template-columns: auto;
+        padding-top: 10px;
+        // width: 100%;
+    }
+    .image_post{
+        width: 150px;
+    }
+    .content_item{
+        display: grid;
+        grid-template-columns:  auto;
+    }
+    .title_post{
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    @media only screen and (min-width: 768px) {
+     /* For desktop: */
+
+        //style form
+
+        .container_form {
+            display: grid;
+            grid-template-columns: auto auto;
+            padding: 10px 10px 50px;
+        }
+        .row {
+            display: grid;
+            grid-template-columns: auto 200px;
+            margin: 10px;
+        }
+
+        input.input_text_email[type=text] {
+            width: 70%;
+            border: 2px solid black;
+            margin-bottom: 1em;
+        }
+
+        .button_save {
+            width: 90%;
+            margin-left: 1em;
+            margin-right: 1em;
+        }
+
+        // style item
+
+        .list_item {
+            display: grid;
+            grid-template-columns: auto;
+        }
+        .title_post{
+            display: grid;
+            grid-template-columns: auto 200px;
+        }
+        .content_item{
+            display: grid;
+            grid-template-columns: 200px auto;
+        }
+        .item_post {
+            max-width: 80%;
+        }
+
     }
 } 
