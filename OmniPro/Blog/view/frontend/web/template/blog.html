@@ -10,14 +10,14 @@
         <div class="container_form">
             <div class="column">
                 <input class="input_text" type="text" id="titulo" name="titulo" placeholder="My Post title"
-                    data-bind="value: title " required />
+                    data-bind="value: title " data-validate='{"required":true}'  />
                 <textarea class="input_textarea" type="textarea" id="contenido" name="contenido"
-                    placeholder="Here all my important text!" data-bind="value: content" required></textarea>
+                    placeholder="Here all my important text!" data-bind="value: content" data-validate='{"required":true}' ></textarea>
                 <input class="input_text_email" type="text" id="email" name="email" placeholder="Email address"
-                    data-bind="value: email" required />
+                    data-bind="value: email" data-validate='{"required":true}' />
 
                 <input class="input_text" type="text" id="image" name="image" placeholder="Image blog"
-                    data-bind="value: image" required />
+                    data-bind="value: image" />
                 <!-- <div class="row">
                     <p>/MyPc/Data/Images/thisisaimage.jpg</p>
                     <button class="button_form" placeholder="My Post title">

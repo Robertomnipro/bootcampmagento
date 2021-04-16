@@ -3,8 +3,10 @@ define([
     'uiComponent',
     'mage/storage',
     'jquery',
-    'ko',
-], function(Component,storage, $,ko) {
+    'mage/url',
+    'mage/validation'
+], function(Component,storage, $,url) {
+    url.setBaseUrl(window.BASE_URL);
     return Component.extend({
         defaults: {
             title:'',
@@ -41,7 +43,19 @@ define([
                 this.blogItems(data.items);
             },this));
         },
-        sendBlog: function() {
+        clearForm: function () {
+            this.image('');
+            this.title('');
+            this.content('');
+            this.email('');
+        },
+        isFormValid: function (form) {
+            return $(form).validation() && $(form).validation('isValid');
+        },
+        sendBlog: function(form) {
+            if(!this.isFormValid(form)){
+                return
+            }
             var blog = {
                 'blog': {
                     "title": this.title(),
@@ -53,6 +67,7 @@ define([
             storage.post(this.blogPostUrl, JSON.stringify(blog))
             .then($.proxy(function() {
                 this.getBlogs();
+                this.clearForm();
             }, this));
         },
     });
