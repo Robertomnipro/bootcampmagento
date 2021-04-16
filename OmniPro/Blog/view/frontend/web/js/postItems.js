@@ -52,10 +52,11 @@ define([
         isFormValid: function (form) {
             return $(form).validation() && $(form).validation('isValid');
         },
-        sendBlog: function(form) {
-            if(!this.isFormValid(form)){
+        sendBlog: function() {
+            if(!this.isFormValid('.form_post')){
                 return
             }
+          
             var blog = {
                 'blog': {
                     "title": this.title(),
