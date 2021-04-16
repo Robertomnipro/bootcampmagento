@@ -9,9 +9,10 @@ class Create extends Action
    
 
     /**
-     * Index action
+     * Edit A Contact Page
      *
-     * @return \Magento\Framework\View\Result\Page
+     * @return \Magento\Backend\Model\View\Result\Page|\Magento\Backend\Model\View\Result\Redirect
+     * @SuppressWarnings(PHPMD.NPathComplexity)
      */
     public function execute()
     {
