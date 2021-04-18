@@ -13,6 +13,7 @@ define([
             content:'',
             email:'',
             image:'', 
+            imageBase64: '',
             blogItems: [],
             blogsUrl: 'rest/V1/blogs?searchCriteria',  
             blogPostUrl: 'rest/V1/blogs'  
@@ -32,7 +33,8 @@ define([
                     'content',
                     'email',
                     'image', 
-                    'blogItems'
+                    'blogItems',
+                    'imageBase64'
                 ]);
 
             return this;
@@ -49,6 +51,17 @@ define([
             this.content('');
             this.email('');
         },
+        changeImage: function (data, event) {
+            var image = event.target.files[0];
+            var reader = new FileReader();
+            reader.readAsDataURL(image);
+            reader.onload = $.proxy(function(e) {
+                var base64 = reader.result
+                                .replace("data:", "")
+                                .replace(/^.+,/, "")
+                this.imageBase64(base64);
+            },this);
+        },
         isFormValid: function (form) {
             return $(form).validation() && $(form).validation('isValid');
         },
@@ -62,7 +75,20 @@ define([
                     "title": this.title(),
                     "email": this.email(),
                     "content": this.content(),
-                    "img": this.image()
+                    "img": "",
+                    "extension_attributes": {
+                        "image": {
+                                "base64EncodedData": this.imageBase64(),
+                                "type": "image/jpeg",
+                                "name": "new_image.jpg"
+                        }
+
+                        // "image": {
+                        //     "name": "prueba_imagen.png",
+                        //     "base64EncodedData": this.imageBase64(),
+                        //     "type": "image/png"
+                        // }
+                    }
                 }
             };
             storage.post(this.blogPostUrl, JSON.stringify(blog))
