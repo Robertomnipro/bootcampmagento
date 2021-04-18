@@ -43,6 +43,7 @@ define([
             storage.get(this.blogsUrl)     
             .then($.proxy(function(data) {
                 this.blogItems(data.items);
+                console.log(data.items);
             },this));
         },
         clearForm: function () {
@@ -82,12 +83,6 @@ define([
                                 "type": "image/jpeg",
                                 "name": "new_image.jpg"
                         }
-
-                        // "image": {
-                        //     "name": "prueba_imagen.png",
-                        //     "base64EncodedData": this.imageBase64(),
-                        //     "type": "image/png"
-                        // }
                     }
                 }
             };

@@ -11,7 +11,7 @@ class Blog extends \Magento\Framework\Model\AbstractExtensibleModel implements \
     const TITLE = 'title';
     const EMAIL = 'email';
     const CONTENT = 'content';
-    const IMG = 'img';
+    const IMG = 'image';
     const ID = 'id';
 
     /**
