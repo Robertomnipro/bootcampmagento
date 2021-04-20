@@ -25,10 +25,9 @@ class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
 
         $items = $this->collection->getItems();
         $this->loadedData = array();
-        /** @var Customer $customer */
-        foreach ($items as $posts) {
+        foreach ($items as $post) {
             // notre fieldset s'apelle "contact" d'ou ce tableau pour que magento puisse retrouver ses datas :
-            $this->loadedData[$posts->getId()]['post'] = $posts->getData();
+            $this->loadedData[$post->getId()]['post']= $post->getData();
         }
 
 
