@@ -1,6 +1,9 @@
 <?php
 namespace OmniPro\Blog\Controller\Adminhtml\Post;
 
+use Magento\Framework\Exception\LocalizedException;
+use Magento\Framework\Exception\NoSuchEntityException;
+
 class Save extends \Magento\Backend\App\Action
 {
     const ADMIN_RESOURCE = 'OmniPro_Blog::save';
@@ -11,6 +14,9 @@ class Save extends \Magento\Backend\App\Action
 
     protected $_logger;
 
+    protected $_blogInterfaceFactory;
+
+    protected $_blogRepository;
 
     /**
      * @param \Magento\Backend\App\Action\Context $context
@@ -31,11 +37,6 @@ class Save extends \Magento\Backend\App\Action
         return parent::__construct($context);
     }
 
-    /**
-     * Index action
-     *
-     * @return \Magento\Framework\View\Result\Page
-     */
     public function execute()
     {
         $data = $this->getRequest()->getPostValue()["post"];
@@ -46,11 +47,32 @@ class Save extends \Magento\Backend\App\Action
          * @var \OmniPro\Blog\Model\Blog $blog
          */
         $blog = $this->_blogInterfaceFactory->create();
-        $blog->setTitle($data['title'] ?? '');
-        $blog->setEmail($data['email'] ?? '');
-        $blog->setContent($data['content'] ?? '');
-        $blog->setImg($data['image'] ?? '');
-        $this->_blogRepository->save($blog);
+        $id =  $this->getRequest()->getParam('id'); //TODO: getById requset
+        if($data){
+            if(empty($id)){
+                try {
+                    $blog = $this->_blogRepository->getById($id);
+
+                } catch (NoSuchEntityException $e) {
+                   
+                }              
+            }
+            $blog->setTitle($data['title'] ?? '');
+            $blog->setEmail($data['email'] ?? '');
+            $blog->setContent($data['content'] ?? '');
+            $blog->setImg($data['image'] ?? '');
+
+            try {     
+                $this->_blogRepository->save($blog);
+                $this->messageManager->addSuccessMessage(__("El blog ha sido creado exitosamente"));
+                //TODO: datapersistor
+            } catch (LocalizedException $e) {
+
+            } catch(\Exception $e){
+
+            }  
+        }
+       
 
         
         return $this->_redirect('*/*/');
