@@ -6,7 +6,36 @@ use OmniPro\Blog\Model\Blog;
 
 class Create extends Action
 {
-   
+    const ADMIN_RESOURCE = 'OmniPro_Prueba::new';
+
+    const PAGE_TITLE = 'New Blog';
+
+     /**
+     * @param \Psr\Log\LoggerInterface
+     */
+
+    protected $_logger;
+
+    /**
+     * @var \Magento\Framework\View\Result\PageFactory
+     */
+    protected $_pageFactory;
+
+    /**
+     * @param \Magento\Backend\App\Action\Context $context
+     */
+    public function __construct(
+       \Magento\Backend\App\Action\Context $context,
+       \Magento\Framework\View\Result\PageFactory $pageFactory,
+       \Psr\Log\LoggerInterface $logger
+       
+    )
+    {
+        $this->_pageFactory = $pageFactory;
+        $this->_logger = $logger;
+        return parent::__construct($context);
+    }
+
 
     /**
      * Edit A Contact Page
@@ -16,15 +45,15 @@ class Create extends Action
      */
     public function execute()
     {
-        $this->_view->loadLayout();
-        $this->_view->renderLayout();
+        $data = $this->getRequest()->getPostValue();
+    
+        $this->_logger->debug('data  '.json_encode( $data));
+       /** @var \Magento\Framework\View\Result\Page $resultPage */
+       $resultPage = $this->_pageFactory->create();
+       $resultPage->setActiveMenu(static::ADMIN_RESOURCE);
+       $resultPage->addBreadcrumb(__(static::PAGE_TITLE), __(static::PAGE_TITLE));
+       $resultPage->getConfig()->getTitle()->prepend(__(static::PAGE_TITLE));
 
-        $blogDatas = $this->getRequest()->getParam('post');
-        if(is_array($blogDatas)) {
-            $contact = $this->_objectManager->create(Blog::class);
-            $contact->setData($blogDatas)->save();
-            $resultRedirect = $this->resultRedirectFactory->create();
-            return $resultRedirect->setPath('*/*/index');
-        }
+       return $resultPage;
     }
 }

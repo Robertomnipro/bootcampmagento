@@ -12,11 +12,27 @@ class Save extends \Magento\Backend\App\Action
      */
     protected $_pageFactory;
 
+    /**
+     * @param \Psr\Log\LoggerInterface
+     */
+
     protected $_logger;
 
+     /**
+     * @param \OmniPro\Prueba\Api\BlogRepositoryInterface
+     */
+    protected $_blogRepository;
+    
+    /**
+     * @param \OmniPro\Prueba\Api\Data\BlogInterfaceFactory
+     */
     protected $_blogInterfaceFactory;
 
-    protected $_blogRepository;
+
+    /**
+     * @param \Magento\Framework\App\Request\DataPersistorInterface
+     */
+    private $_dataPersistor;
 
     /**
      * @param \Magento\Backend\App\Action\Context $context

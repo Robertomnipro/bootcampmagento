@@ -61,6 +61,19 @@
                     </item>
                 </argument>
             </action>
+             <action name="update">
+                <argument name="data" xsi:type="array">
+                    <item name="config" xsi:type="array">
+                        <item name="type" xsi:type="string">Update</item>
+                        <item name="label" xsi:type="string" translate="true">Editar</item>
+                        <item name="url" xsi:type="url" path="omnipro_blog/post/create"/>
+                        <!-- <item name="confirm" xsi:type="array">
+                            <item name="title" xsi:type="string" translate="true">Delete Post</item>
+                            <item name="message" xsi:type="string" translate="true">Are you sure you wan't to delete selected items?</item>
+                        </item> -->
+                    </item>
+                </argument>
+            </action>
         </massaction>
         <paging name="listing_paging"/>
     </listingToolbar>
