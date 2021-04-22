@@ -9,30 +9,23 @@
         <h3 class='title_form'> New blog post</h3>
         <div class="container_form">
             <div class="column">
-                <input class="input_text" type="text" id="titulo" name="titulo" placeholder="My Post title"
+                <input class="text_field" type="text" id="titulo" name="titulo" placeholder="My Post title"
                     data-bind="value: title " data-validate='{"required":true}'  />
-                <textarea class="input_textarea" type="textarea" id="contenido" name="contenido"
+                <textarea class="textarea" type="textarea" id="contenido" name="contenido"
                     placeholder="Here all my important text!" data-bind="value: content" data-validate='{"required":true}' ></textarea>
-                <input class="input_text_email" type="text" id="email" name="email" placeholder="Email address"
+                <input class="text_field" type="text" id="email" name="email" placeholder="Email address"
                     data-bind="value: email" data-validate='{"required":true}' />
 
                 <div class="row">
-                    <div >
-                        <input  type="file" id="img" name="img" data-bind="value: image, event: { change: changeImage }" accept="image/png, image/jpeg">         
-                    </div>
-                </div>
+                    <!-- <div > -->
+                        <input  type="file" id="img" name="img"  class="input_text"data-bind="value: image, event: { change: changeImage }" accept="image/png, image/jpeg">   
+                        <input  type="button" id="removeImage" name="removeImage" data-bind="event: { change: removeImage }, visible: image" value="Remove image">      
 
-                <!-- <input class="input_text" type="text" id="image" name="image" placeholder="Image blog"
-                    data-bind="value: image" data-validate='{"required":false}'/> -->
-                <!-- <div class="row">
-                    <p>/MyPc/Data/Images/thisisaimage.jpg</p>
-                    <button class="button_form" placeholder="My Post title">
-                        Upload image
-                    </button>
-                </div> -->
+                    <!-- </div> -->
+                </div>
             </div>
             <div class="column">
-                <button class="button_save" placeholder="My Post title">
+                <button class="button_save">
                     Save post
                 </button>
 

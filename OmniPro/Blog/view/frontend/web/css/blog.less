@@ -29,18 +29,13 @@
         margin-left: 10px;
     }
 
-    input.input_text[type=text] {
+    .text_field[type=text] {
         border: 2px solid black;
         margin-bottom: 1em;
+
     }
 
-    input.input_text_email[type=text] {
-        
-        border: 2px solid black;
-        margin-bottom: 1em;
-    }
-
-    .input_textarea {
+    .textarea {
         margin-bottom: 1em;
         resize: none;
         border-width: 2px;
@@ -50,7 +45,15 @@
     .row {
         display: grid;
         grid-template-columns: auto;
-        margin: 1em, 1em;
+         input[type=button]{
+            margin-top: 1rem;
+            border-width: 2px;
+            border-color: black;
+        }
+        input[type=file]{
+            border-width: 2px;
+            border-color: black;
+        }
     }
 
     .button_save {
@@ -74,14 +77,12 @@
         border-width: 2px;
     }
 
-    input[type=]
-
     // style items
     .item_post {
         display: grid;
         grid-template-columns: auto;
         padding: 10px;
-        margin: 10px 10px;
+        margin-bottom: 1rem;
         border-style: solid;
         border-color: black;
         border-width: 2px;

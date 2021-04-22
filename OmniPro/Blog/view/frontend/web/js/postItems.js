@@ -21,6 +21,7 @@ define([
         initialize: function() {
             this._super();
             this.getBlogs();
+            this.clearForm();
             this.title.subscribe(function (value) {
                 console.log(value );
             },this);
@@ -51,6 +52,7 @@ define([
             this.title('');
             this.content('');
             this.email('');
+            this.imageBase64('');
         },
         changeImage: function (data, event) {
             var image = event.target.files[0];
@@ -62,6 +64,13 @@ define([
                                 .replace(/^.+,/, "")
                 this.imageBase64(base64);
             },this);
+        },
+        removeImage: function () {
+            $.proxy(function () {
+                this.imageBase64('');
+                this.image('');
+                
+            })
         },
         isFormValid: function (form) {
             return $(form).validation() && $(form).validation('isValid');
