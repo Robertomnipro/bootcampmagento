@@ -1,0 +1,41 @@
+  
+ //
+//  Variables
+//  _____________________________________________
+
+@login-background-color: #393FD0;
+
+ // Common(style-m.css)
+
+ & when(@media-common = true){
+     .content-form
+     {
+        
+         .login{
+            background-color: black;
+         }
+     }
+
+ }
+
+  // Movil (style-m.css)
+ .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m){
+    .content-form
+    {
+        padding-inline: 1.5rem 1.5rem;
+
+        .login{
+           background-color: black;
+        }
+    }
+    .page-main{
+        padding: 0px;
+        background-color: @login-background-color;
+    }
+ }
+ // Desktop(style-m.css)
+ .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m){
+     
+}
+
+ 
