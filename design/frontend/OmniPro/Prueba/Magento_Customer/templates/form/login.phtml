@@ -3,18 +3,54 @@
    <form>
       <div class="tabs">
          <div class="tab">
-            <input type="radio" id="tab-1" name="tab-group-1" checked/>
-            <label for="tab-1">INGRESO</label>
-            <div class="content">Our content will go here</div>
+            <input class="tab-selection" type="radio" id="tab-1" name="tab-group-1" checked />
+            <label class="tab-label" for="tab-1">INGRESO</label>
+            <div class="content">
+               <div class="form-input">
+                  <label for="email">EMAIL</label>
+                  <input type="text" name="email" id="email" placeholder="ejemplo@email.com">
+               </div>
+               <div class="form-input">
+                  <label for="password">CONTRASEÑA</label>
+                  <input type="password" name="password" id="password" placeholder="********">
+               </div>
+               <div class="form-input">
+                  <input type="button" name="submit" id="submit" value="Ingreso">
+               </div>
+               <div class="form-input mb-2 ta-center">
+                  <a href="http://#"> Olvide Contraseña</a>
+               </div>
+
+            </div>
          </div>
          <div class="tab">
-            <input type="radio" id="tab-1" name="tab-group-1" checked/>
-            <label for="tab-1">REGISTRO</label>
-            <div class="content">Our content tab 1</div>
+            <input class="tab-selection" type="radio" id="tab-2" name="tab-group-1" />
+            <label for="tab-2">REGISTRO</label>
+            <div class="content"> 
+            <div class="form-input">
+                  <label for="name">NOMBRE</label>
+                  <input type="text" name="name" id="name" placeholder="Juan">
+               </div>
+               <div class="form-input">
+                  <label for="lastname">Apellido</label>
+                  <input type="text" name="lastname" id="lastname" placeholder="Pérez">
+               </div>
+               <div class="form-input">
+                  <label for="email">EMAIL</label>
+                  <input type="text" name="email" id="email" placeholder="ejemplo@email.com">
+               </div>
+               <div class="form-input">
+                  <label for="password">CONTRASEÑA</label>
+                  <input type="password" name="password" id="password" placeholder="********">
+               </div>
+               <div class="form-input">
+                  <input type="button" name="submit" id="submit" value="Registro">
+               </div>
+            </div>
          </div>
 
 
       </div>
    </form>
-   
+
 </div>

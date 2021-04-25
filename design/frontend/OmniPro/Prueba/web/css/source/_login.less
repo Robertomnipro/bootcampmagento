@@ -4,6 +4,14 @@
 //  _____________________________________________
 
 @login-background-color: #393FD0;
+@form-background-color: #3A3061;
+@tab-background-disable-color: #3A3061;
+@button-background-color: linear-gradient(90deg, #8DE7ED 2.31%, #2FCEC5 100%);;
+
+
+@font-color:  #F5F5F5;
+
+
 
  // Common(style-m.css)
 
@@ -24,9 +32,106 @@
     {
         padding-inline: 1.5rem 1.5rem;
 
-        .login{
-           background-color: black;
+        form{
+            color: @font-color;
         }
+        .tabs {
+            // max-width: 43.75rem;
+            min-height: 6.25rem;
+            margin: 25px 0;
+            display: flex;
+            /* allows for tabs to be next to each other */
+            position: relative;
+            /* relative here contains the width of the content */
+
+            .tab{
+                label {
+                    display: block;
+                    cursor: pointer;
+                    height: 3.75rem;
+                    width: 14.5rem;
+                    border-radius: .375rem .375rem 0rem 0rem;
+                    background:@tab-background-disable-color;
+                    opacity: 0.35;
+                }
+            } 
+            .tab-label{
+                color: @font-color;
+                opacity: 1;
+            }
+            .content {
+                display: none;
+                padding:  1.5rem;
+                position: absolute;
+                background: @form-background-color;
+                border-radius: 0rem 0rem .375rem .375rem;
+                left: 0;
+                right: 0;
+                .form-input{
+                    margin-top: 1.4375rem;
+                   input{
+                        outline: 0;
+                        background-color: transparent;
+                        border-width: 0 0 .0625rem;         
+                        border-color: @font-color;
+                        opacity: 0.5;
+                        color: @font-color;
+                   }
+                   input:focus{  
+                        outline: 0;    
+                        border-color: transparent;
+                        border-width: 0 0 .0625rem;         
+                        background: transparent;
+                        box-shadow: none;
+
+                    }
+                    input[type='button']{
+                        display: block;
+                        color:@font-color;
+                        height: 2.75rem;
+                        width: 100%;
+                        border: none;
+                        border-radius: 1.5rem;
+                        background: @button-background-color;
+                        opacity: 1;
+                    }
+                }
+
+                .mb-2{
+                    margin-bottom: 1.6875rem;
+                }
+                .ta-center{
+                    text-align: center;
+                }
+
+                /* the left and right at 0 help the tabs to overlap each other */
+            }
+        }
+       
+        [type='radio']:checked ~ label ~ .content {
+            z-index: 100;
+            display: block;
+            align-items: center;
+            label{
+                color: @font-color;
+                background-color: transparent;
+                opacity: 1;
+            }
+        }
+        [type="radio"]:checked ~ label {
+            background: @form-background-color;
+            width: 14.5rem;
+            opacity: 1;
+            text-align: center;
+        }
+
+        .tab-selection{
+            display: none;
+            color: @font-color;
+            // width: 11.4375rem;
+        }
+        
+  
     }
     .page-main{
         padding: 0px;
