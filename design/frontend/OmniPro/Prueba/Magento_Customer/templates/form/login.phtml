@@ -1,10 +1,15 @@
 <div class="content-form">
-   <h1>this is la wea</h1>
+
+   <div class="logo">
+      <img src=<?php echo $block->getViewFileUrl('images/logo.svg'); ?> alt="">
+
+   </div>
+   
    <form>
       <div class="tabs">
          <div class="tab">
             <input class="tab-selection" type="radio" id="tab-1" name="tab-group-1" checked />
-            <label class="tab-label" for="tab-1">INGRESO</label>
+            <label class="tab-label-rigth" for="tab-1">INGRESO</label>
             <div class="content">
                <div class="form-input">
                   <label for="email">EMAIL</label>
@@ -25,7 +30,7 @@
          </div>
          <div class="tab">
             <input class="tab-selection" type="radio" id="tab-2" name="tab-group-1" />
-            <label for="tab-2">REGISTRO</label>
+            <label class="tab-label-left" for="tab-2">REGISTRO</label>
             <div class="content"> 
             <div class="form-input">
                   <label for="name">NOMBRE</label>

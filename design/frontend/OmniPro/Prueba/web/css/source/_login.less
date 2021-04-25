@@ -28,39 +28,59 @@
 
   // Movil (style-m.css)
  .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m){
-    .content-form
-    {
-        padding-inline: 1.5rem 1.5rem;
+    .logo{
+        float: none;
+        margin: auto auto 3.6875rem 4.5rem;
+        max-width: 50%;
+        position: relative;
+        z-index: 5;
+        text-align: center;
+        img{
+            display: inline;
+        }
 
+        
+   
+    }
+    .content-form
+     {
+         display: grid;
+         grid-template-columns: auto;
+         padding: 0 1.5rem;
         form{
             color: @font-color;
         }
         .tabs {
-            // max-width: 43.75rem;
-            min-height: 6.25rem;
-            margin: 25px 0;
             display: flex;
             /* allows for tabs to be next to each other */
             position: relative;
             /* relative here contains the width of the content */
 
             .tab{
+                width: 100%;
+        
                 label {
                     display: inline-block;
                     text-align: center;
                     cursor: pointer;
-                    height: 3.75rem;
+                    height: 3.7rem;
                     width: 14.5rem;
                     border-radius: .375rem .375rem 0rem 0rem;
                     background:@tab-background-disable-color;
+
+                }
+                .tab-label-rigth{
+                
+                    -webkit-clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%);
+                    clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%);  
+                }
+                .tab-label-left{
+                    -webkit-clip-path: polygon(10% 0%, 100% 100%, 100% 100%, 0% 100%); 
+                    clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);  
+
                 }
             } 
-            label .tab-label{
-                color: @font-color;
-                opacity: 1;
-                display: inline-block;
-                text-align: right;
-            }
+
             .content {
                 display: none;
                 padding:  1.5rem;
@@ -78,6 +98,7 @@
                         border-color: @font-color;
                         opacity: 0.5;
                         color: @font-color;
+                        padding: 0 0;
                    }
                    input:focus{  
                         outline: 0;    
@@ -96,12 +117,15 @@
                         border-radius: 1.5rem;
                         background: @button-background-color;
                         opacity: 1;
+                        margin-top: 4.375rem;
                     }
                     label{
                         color: @font-color;
                         opacity: 1;
                         display: inline-block;
                         text-align: left;
+                        width: 0rem;
+                        height: 0px;
                     }
                 }
 
@@ -123,9 +147,7 @@
         }
         [type="radio"]:checked ~ label {
             background: @form-background-color;
-            width: 14.5rem;
             opacity: 1;
-            text-align: center;
         }
 
         .tab-selection{
