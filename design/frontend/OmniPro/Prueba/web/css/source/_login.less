@@ -28,53 +28,61 @@
 
   // Movil (style-m.css)
  .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m){
+    
+    // .background-login{
+    //     background-image: url('../images/fill_13.svg') url('../images/fill_8.svg') url('../images/fill_17.svg');
+    // }
+    
     .logo{
         float: none;
-        margin: auto auto 3.6875rem 4.5rem;
+        margin: 3.6875rem  auto 4.5125rem auto;
         max-width: 50%;
         position: relative;
-        z-index: 5;
         text-align: center;
         img{
             display: inline;
         }
 
-        
+        // background-image: url('../images/logo.svg');
    
     }
     .content-form
      {
-         display: grid;
-         grid-template-columns: auto;
-         padding: 0 1.5rem;
+        padding: 0 1.5rem;
         form{
             color: @font-color;
         }
         .tabs {
             display: flex;
+            
             /* allows for tabs to be next to each other */
             position: relative;
             /* relative here contains the width of the content */
+            max-width: 375px;
 
-            .tab{
-                width: 100%;
-        
+            .tab{        
                 label {
                     display: inline-block;
                     text-align: center;
                     cursor: pointer;
-                    height: 3.7rem;
-                    width: 14.5rem;
+                    height: 60px;
+                    // width: 183px;
+                }
+                .tab-label{
+                    text-align: center;
+                    cursor: pointer;
+                    height: 60px;
+                    width: 151.9px;
                     border-radius: .375rem .375rem 0rem 0rem;
                     background:@tab-background-disable-color;
-
                 }
                 .tab-label-rigth{
-                
+                    margin-right: -.5em;
                     -webkit-clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%);
-                    clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%);  
+                     clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%);  
                 }
                 .tab-label-left{
+                    margin-left: -.5em;
                     -webkit-clip-path: polygon(10% 0%, 100% 100%, 100% 100%, 0% 100%); 
                     clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);  
 
@@ -86,7 +94,7 @@
                 padding:  1.5rem;
                 position: absolute;
                 background: @form-background-color;
-                border-radius: 0rem 0rem .375rem .375rem;
+                border-radius: 0rem 0rem 6px 6px;
                 left: 0;
                 right: 0;
                 .form-input{
@@ -124,7 +132,7 @@
                         opacity: 1;
                         display: inline-block;
                         text-align: left;
-                        width: 0rem;
+                        width: 0px;
                         height: 0px;
                     }
                 }
@@ -140,12 +148,12 @@
             }
         }
        
-        [type='radio']:checked ~ label ~ .content {
+        [type='radio']:checked ~ .tab-label ~ .content {
             z-index: 100;
             display: block;
             align-items: center;
         }
-        [type="radio"]:checked ~ label {
+        [type="radio"]:checked ~ .tab-label {
             background: @form-background-color;
             opacity: 1;
         }
@@ -161,6 +169,15 @@
     .page-main{
         padding: 0px;
         background-color: @login-background-color;
+        background-repeat: no-repeat, no-repeat, no-repeat;
+        background-image: url('../images/background/fill_13.svg'), 
+            url('../images/background/fill_8.svg'),
+            url('../images/background/fill_17.svg');
+        background-size: auto, auto, auto;
+        background-position: center 0, center left, center right;
+
+        // background-size: 239.91px 287.18px, 223.28px 267.7px, auto;
+        // background-position: 48px -32px, -64px 238px, left top;
     }
  }
  // Desktop(style-m.css)

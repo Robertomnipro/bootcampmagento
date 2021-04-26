@@ -1,4 +1,4 @@
-<div class="content-form">
+<div class="content-form background-login">
 
    <div class="logo">
       <img src=<?php echo $block->getViewFileUrl('images/logo.svg'); ?> alt="">
@@ -9,7 +9,9 @@
       <div class="tabs">
          <div class="tab">
             <input class="tab-selection" type="radio" id="tab-1" name="tab-group-1" checked />
-            <label class="tab-label-rigth" for="tab-1">INGRESO</label>
+            <div class="tab-label tab-label-rigth">
+               <label  for="tab-1">INGRESO</label>    
+            </div>
             <div class="content">
                <div class="form-input">
                   <label for="email">EMAIL</label>
@@ -23,14 +25,16 @@
                   <input type="button" name="submit" id="submit" value="Ingreso">
                </div>
                <div class="form-input mb-2 ta-center">
-                  <a href="http://#"> Olvide Contraseña</a>
+                  <a href="#"> Olvide Contraseña</a>
                </div>
 
             </div>
          </div>
          <div class="tab">
             <input class="tab-selection" type="radio" id="tab-2" name="tab-group-1" />
-            <label class="tab-label-left" for="tab-2">REGISTRO</label>
+            <div class="tab-label tab-label-left">
+               <label  for="tab-2">REGISTRO</label>
+            </div>
             <div class="content"> 
             <div class="form-input">
                   <label for="name">NOMBRE</label>
