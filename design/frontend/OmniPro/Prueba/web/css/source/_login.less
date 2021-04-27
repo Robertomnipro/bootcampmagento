@@ -33,6 +33,7 @@
     //     background-image: url('../images/fill_13.svg') url('../images/fill_8.svg') url('../images/fill_17.svg');
     // }
     
+    
     .logo{
         float: none;
         margin: 3.6875rem  auto 4.5125rem auto;
@@ -49,8 +50,61 @@
     .content-form
      {
         padding: 0 1.5rem;
-        form{
-            color: @font-color;
+        
+        .nav-container{
+            position: relative;
+            // float:right;
+            .burger{
+                position: relative;
+                label{
+                    display: inline;
+                    cursor: pointer;
+                }
+                input[type="checkbox"]{
+                    position: absolute;
+                    margin: 0;
+                    display: none;
+        
+                }
+            }
+            .icon-menu{
+                display: block;
+                width: 30px;
+                height: 11px;
+                // margin-top: 24px;
+                // z-index: 2;
+            }
+            .icon-arrow{
+                position: absolute;
+                display: block;
+                width: 30px;
+                height: 11px;
+                z-index: -1;
+                top:0;
+                left: 0;
+                background-image: url('../images/icons/icon_menu.svg');
+
+            }
+            // [type="checkbox"]:checked ~  label ~ .icon-menu{
+            //     z-index: -100;
+            //     opacity: 0;
+            // }
+            [type="checkbox"]:checked ~  label ~ .icon-arrow{
+                // display: block;
+                // z-index: 3;
+                background-image: url('../images/icons/ic_back.svg');
+
+               
+            }
+            // [type="checkbox"]:checked ~  label ~ .icon-menu{
+            //     z-index: -100;
+            //     opacity: 0;
+            // }
+            // [type="checkbox"]:checked ~  label ~ .icon-arrow{
+            //     display: block;
+            //     z-index: 3;
+            // }
+            
         }
         .tabs {
             display: flex;
@@ -66,6 +120,7 @@
                     text-align: center;
                     cursor: pointer;
                     height: 60px;
+                    color:@font-color;
                     // width: 183px;
                 }
                 .tab-label{
@@ -97,6 +152,9 @@
                 border-radius: 0rem 0rem 6px 6px;
                 left: 0;
                 right: 0;
+                form{
+                    color: @font-color;
+                }
                 .form-input{
                     margin-top: 1.4375rem;
                    input{
@@ -116,7 +174,7 @@
                         box-shadow: none;
 
                     }
-                    input[type='button']{
+                    input[type='submit']{
                         display: block;
                         color:@font-color;
                         height: 2.75rem;
@@ -148,7 +206,7 @@
             }
         }
        
-        [type='radio']:checked ~ .tab-label ~ .content {
+        [type="radio"]:checked ~ .tab-label ~ .content {
             z-index: 100;
             display: block;
             align-items: center;
