@@ -19,13 +19,13 @@
                     <container name="form.additional.info" as="form_additional_info"/>
                 </block>
             </container>
-            <!-- <block class="Magento\Cookie\Block\RequireCookie" name="require-cookie" template="Magento_Cookie::require_cookie.phtml">
+            <block class="Magento\Cookie\Block\RequireCookie" name="require-cookie" template="Magento_Cookie::require_cookie.phtml">
                 <arguments>
                     <argument name="triggers" xsi:type="array">
                         <item name="loginButton" xsi:type="string">.action.login</item>
                     </argument>
                 </arguments>
-            </block> -->
+            </block>
         </referenceContainer>
         <referenceContainer name="header.container" remove="true"/>   
         <referenceBlock name="catalog.topnav" remove="true"/>     
