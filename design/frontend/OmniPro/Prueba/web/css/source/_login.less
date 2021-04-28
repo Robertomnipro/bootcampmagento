@@ -112,22 +112,22 @@
             /* allows for tabs to be next to each other */
             position: relative;
             /* relative here contains the width of the content */
-            max-width: 375px;
+            max-width: 812px;
+            align-items:flex-end;
+            flex-shrink: 0;
 
-            .tab{        
+            .tab{    
+                flex-grow:1;
+
                 label {
-                    display: inline-block;
                     text-align: center;
                     cursor: pointer;
-                    height: 60px;
                     color:@font-color;
-                    // width: 183px;
                 }
-                .tab-label{
+                .tab-label{  
                     text-align: center;
                     cursor: pointer;
                     height: 60px;
-                    width: 151.9px;
                     border-radius: .375rem .375rem 0rem 0rem;
                     background:@tab-background-disable-color;
                 }
