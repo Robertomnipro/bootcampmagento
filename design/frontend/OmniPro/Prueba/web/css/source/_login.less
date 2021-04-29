@@ -21,13 +21,15 @@
     
     .logo{
         float: none;
-        margin: 3.6875rem  auto 4.5125rem auto;
-        max-width: 50%;
+        margin: 20px  auto 72.2px auto;
+        // max-width: 50%;
         z-index: 200;
         position: relative;
         text-align: center;
         img{
             display: inline;
+            width: 91.6px;
+            height: 146.8px;
         }
 
         // background-image: url('../images/logo.svg');
@@ -35,7 +37,7 @@
     }
     .content-form
      {
-        padding: 0 1.5rem;
+        padding: 0 24px;
         .tabs {
             display: flex;
             
@@ -58,16 +60,16 @@
                     text-align: center;
                     cursor: pointer;
                     height: 60px;
-                    border-radius: .375rem .375rem 0rem 0rem;
+                    border-radius: 6px 6px 0px 0px;
                     background:@tab-background-disable-color;
                 }
                 .tab-label-rigth{
-                    margin-right: -.5em;
+                    margin-right: -1.5em;
                     -webkit-clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%);
                      clip-path: polygon(0% 0%, 90% 0%, 100% 100%, 0% 100%);  
                 }
                 .tab-label-left{
-                    margin-left: -.5em;
+                     margin-left: -.5em;
                     -webkit-clip-path: polygon(10% 0%, 100% 100%, 100% 100%, 0% 100%); 
                     clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);  
 
@@ -76,7 +78,7 @@
 
             .content {
                 display: none;
-                padding:  1.5rem;
+                padding:  24px;
                 position: absolute;
                 background: @form-background-color;
                 border-radius: 0rem 0rem 6px 6px;
@@ -86,7 +88,9 @@
                     color: @font-color;
                 }
                 .form-input{
-                    margin-top: 1.4375rem;
+                    margin-top: 0;
+                    margin-bottom: 24px;
+
                    input{
                         outline: 0;
                         background-color: transparent;
@@ -107,13 +111,13 @@
                     input[type='submit']{
                         display: block;
                         color:@font-color;
-                        height: 2.75rem;
+                        height: 44px;
                         width: 100%;
                         border: none;
-                        border-radius: 1.5rem;
+                        border-radius: 24px;
                         background: @button-background-color;
                         opacity: 1;
-                        margin-top: 4.375rem;
+                        margin-top: 70px;
                     }
                     label{
                         color: @font-color;
@@ -125,14 +129,17 @@
                     }
                 }
 
+                .mb-17{
+                    margin-bottom: 17px; 
+                }
+
                 .mb-2{
-                    margin-bottom: 1.6875rem;
+                    margin-bottom: 2px;
                 }
                 .ta-center{
                     text-align: center;
                 }
 
-                /* the left and right at 0 help the tabs to overlap each other */
             }
         }
        
@@ -149,7 +156,6 @@
         .tab-selection{
             display: none;
             color: @font-color;
-            // width: 11.4375rem;
         }
         
   
@@ -164,8 +170,6 @@
         background-size: auto, auto, auto;
         background-position: center 0, center left, center right;
 
-        // background-size: 239.91px 287.18px, 223.28px 267.7px, auto;
-        // background-position: 48px -32px, -64px 238px, left top;
     }
  }
  // Desktop(style-m.css)
