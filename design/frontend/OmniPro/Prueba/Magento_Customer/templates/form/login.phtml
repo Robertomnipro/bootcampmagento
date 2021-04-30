@@ -1,5 +1,4 @@
-<div class="content-form background-login">
-   <div class="nav-container">
+<div class="nav-container">
       <div class="burger" >
          <input type="checkbox" id="nav-toggle" name="group-menu">
          <label for="nav-toggle" >
@@ -24,6 +23,7 @@
          </div>
       </div>
    </div>
+<div class="content-form">
    <div class="logo">
       <img src=<?php echo $block->getViewFileUrl('images/logo.svg'); ?> alt="">
    </div>
@@ -48,7 +48,7 @@
                <div class="form-input mb-17">
                   <input type="submit" name="submit" id="submit" value="Ingreso">
                </div>
-               <div class="form-input mb-2 ta-center">
+               <div class="form-input mb-19 ta-center">
                   <a href="#"> Olvide Contraseña</a>
                </div>
          </div>
@@ -79,8 +79,8 @@
                   <input type="password" name="password" id="password" placeholder="********">
                </div>
                <?= $block->getChildHtml('form_additional_info') ?>
-               <div class="form-input">
-                  <input type="submit" name="submit" id="submit" value="Registro">
+               <div class="form-input ">
+                  <input class="register" type="submit" name="submit" id="submit" value="Registro">
                </div>
          </div>
          </form>
