@@ -339,7 +339,6 @@ return [
         'Klarna_Onsitemessaging' => 1,
         'Klarna_KpGraphQl' => 1,
         'OmniPro_Blog' => 1,
-        'OmniPro_DataPathTest' => 1,
         'PayPal_Braintree' => 1,
         'OmniPro_Roberto' => 1,
         'PayPal_BraintreeGraphQl' => 1,
