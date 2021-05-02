@@ -2,12 +2,34 @@
 // .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m){
     .roberto-index-index{
         .nav-container{
-            background-color: aquamarine;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            padding: 0px 21px;
+
             .logo-l{
                 margin-bottom: 0px;
                 margin-top: 0px;
-    
-                background-image:url("@{url}");
+                content: @icon-logo;
+            }
+            .row{
+                display: flex;
+                div{
+                    padding-left: 21px;
+                }
+                .icon-search{
+                    content: @icon-search;
+                }
+                .icon-heart{
+                    content: @icon-heart;
+                }
+                .icon-bag{
+                    content: @icon-bag;
+                }
+                .icon-burger{
+                    content: @icon-burger;
+                }
             }
         }
 
