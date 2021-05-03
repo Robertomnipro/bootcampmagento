@@ -1,0 +1,82 @@
+.roberto-index-index{
+    .product-settings{
+        max-width: 375px;
+        padding: 0px 21px;
+        .size-row{
+            display: flex;
+            margin-bottom: 24px;
+            .wrapper-sizes{
+                display: flex;
+                align-items: baseline;
+                padding-left: 22px;
+                .size{
+                    width: 44px;
+                    height: 40px;
+                    border: 1px solid @border-button-color;
+                    margin-left: 6px;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;       
+                }
+                .disable-size{
+                    color:@disable-text-size-color;
+                    border: none;
+
+                    background-color:@disable-button-size-color;
+                }
+                .enable-size{
+                    background-color: transparent;
+                }
+                .selected-size{
+                    color:white;
+                    background-color: @selected-button-size-color;
+                }
+            }
+        }
+        .kit-row{
+            display: flex;
+            .wrapper-kit{
+                display: flex;
+                align-items: baseline;
+                padding-left: 22px;
+                padding-bottom: 26px;
+                .kit{
+                    text-align: center;
+                    width: 72px;
+                    height: 40px;
+                    margin-left: 6px;
+                    border: 1px solid @border-button-color;
+                    display: flex;
+                    justify-content: space-around;
+                    align-items: center;
+                }
+                .selected{
+                    color:white;
+                    background-color: @selected-button-size-color;
+                }
+            }
+        }
+        .quantity{
+            display: flex;
+            margin-bottom: 30px;
+            input{
+                width: 120px;
+                height: 40px;
+                margin-left: 12px;
+            }
+
+        }
+        .submit{
+            width: 100%;
+            input[type='button']{
+                color: white;
+                width: 100%;
+                height: 40px;
+                background-color:@selected-button-size-color;
+                border: none;
+            }
+        }
+
+    }
+
+}
