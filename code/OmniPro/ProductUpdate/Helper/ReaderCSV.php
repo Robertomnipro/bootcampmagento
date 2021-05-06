@@ -1,7 +1,7 @@
 <?php
 namespace OmniPro\ProductUpdate\Helper;
 
-use Directory; 
+use Magento\Framework\App\Filesystem\DirectoryList;
 use Magento\Framework\File\Csv;
 use Magento\Framework\Filesystem\Driver\File;
 use \Magento\Framework\Filesystem;
@@ -45,7 +45,7 @@ class ReaderCSV
         File $file,      
         Csv $csv,
         Logger $logger
-    )
+    ) 
     {
         $this->filesystem = $filesystem;
         $this->csv = $csv;
@@ -55,14 +55,14 @@ class ReaderCSV
     public function readCsv()
     {
        $mediaDirectory = $this->filesystem->getDirectoryRead(DirectoryList::MEDIA);
-       $pathFile = $mediaDirectory->getAbsolutePath('update/data.csv');
+       $pathFile = $mediaDirectory->getAbsolutePath(self::PATH_FILE);
        if($this->file->isExists($pathFile)) {
            $this->csv->setDelimiter(self::DELIMITER);
            $data = $this->csv->getData($pathFile);
            if(!empty($data)){
                $header = array_slice($data, 0, 1)[0];
-               foreach (array_slice($data,1) as $key => $value) { 
-                  $this->logger->debug('DATA ' . implode(';',$value));   
+               foreach (array_slice($data,1) as $key => $value) {  
+                  $this->logger->debug('DATA ' . implode('|',$value));   
                }
            }
        }

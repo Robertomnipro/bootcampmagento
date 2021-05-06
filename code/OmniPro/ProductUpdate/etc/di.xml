@@ -13,5 +13,12 @@
             </argument>
         </arguments>
     </type>
+    <type name="Magento\Framework\Console\CommandList">
+			<arguments>
+				<argument name="commands" xsi:type="array">
+					<item name="update_product" xsi:type="object">OmniPro\ProductUpdate\Console\Command\ProductUpdate</item>
+				</argument>
+			</arguments>
+		</type>
 
 </config> 
