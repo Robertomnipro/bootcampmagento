@@ -66,6 +66,7 @@ class ReaderCSV
                }
            }
        }
+       return $data;
     }
 }
     

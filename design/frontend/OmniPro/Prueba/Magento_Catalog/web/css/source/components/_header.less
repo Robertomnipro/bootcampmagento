@@ -1,0 +1,35 @@
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    .catalog-product-view{
+        .page-header{
+            margin-bottom: 0;
+            .logo{
+                img{
+                    width: 63.49px;
+                }
+            }
+            .block-search{
+                .control{
+                    border-top: none;
+
+                }
+            }
+            .nav-toggle{
+                content:@icon-burger;
+            }
+            .towishlist{
+                content: @icon-heart;
+            }
+            .showcart{
+                content: @icon-bag;
+            }
+            .left-col{
+                display: flex;
+
+            }
+            .right-col{
+                display: flex;
+            }
+        }
+    }
+
+}   
