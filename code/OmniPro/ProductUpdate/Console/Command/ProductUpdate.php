@@ -6,10 +6,24 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use OmniPro\ProductUpdate\Logger\Logger;
+use OmniPro\ProductUpdate\Model\UpdateProduct;
 
 
 class ProductUpdate extends Command
 {
+     /**
+     *
+     * @var  OmniPro\ProductUpdate\Model\UpdateProduct;
+     */
+    private $_productUpdate;
+
+    public function __construct(
+        \OmniPro\ProductUpdate\Model\UpdateProduct $productUpdate
+        )
+    {
+        $this->_productUpdate =  $productUpdate;
+        parent::__construct();
+    }
     /**
      * @inheritDoc
      */
@@ -17,7 +31,6 @@ class ProductUpdate extends Command
     {
         $this->setName('omnipro:productupdate');
         $this->setDescription('update product from csv');
-
         parent::configure();
     }
 
@@ -31,5 +44,7 @@ class ProductUpdate extends Command
     {    
         $output->writeln('<info>Success Message.</info>');
         $output->writeln('<error>An error encountered.</error>');
+        $this->_productUpdate->updateProductCsv();
+        
     }
 }
