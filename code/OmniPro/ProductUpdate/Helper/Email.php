@@ -46,7 +46,7 @@ class Email extends \Magento\Framework\App\Helper\AbstractHelper
                     'templateVar'  => 'My Topic',
                 ])
                 ->setFromByScope($sender)
-                ->addTo('roberto@omni.pro')
+                ->addTo('roberto.robles@omni.pro')
                 ->getTransport();
             $transport->sendMessage();
             $this->inlineTranslation->resume();

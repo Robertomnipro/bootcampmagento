@@ -61,9 +61,9 @@ class ReaderCSV
            $data = $this->csv->getData($pathFile);
            if(!empty($data)){
                $header = array_slice($data, 0, 1)[0];
-               foreach (array_slice($data,1) as $key => $value) {  
-                  $this->logger->debug('DATA ' . implode('|',$value));   
-               }
+            //    foreach (array_slice($data,1) as $key => $value) {  
+            //       $this->logger->debug('DATA ' . implode('|',$value));   
+            //    }
            }
        }
        return $data;
