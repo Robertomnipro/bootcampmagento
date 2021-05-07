@@ -42,9 +42,12 @@ class ProductUpdate extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {    
-        $output->writeln('<info>Success Message.</info>');
-        $output->writeln('<error>An error encountered.</error>');
-        $this->_productUpdate->updateProductCsv();
+        try {
+            $this->_productUpdate->updateProductCsv();
+            $output->writeln('<info>Success Message.</info>');
+        } catch (\Exception $e) {
+            $output->writeln('<error>An error to create product: '.$e.' </error>');
+        }
         
     }
 }
