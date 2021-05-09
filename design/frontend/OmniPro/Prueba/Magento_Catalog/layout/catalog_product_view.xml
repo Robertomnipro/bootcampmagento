@@ -13,13 +13,12 @@
             </arguments>
         </referenceBlock>
         <referenceContainer name="header-wrapper" htmlClass="bmg-header-container bmg-header-inverse container">
-            <container name="logo-product-container" htmlTag="div" htmlClass="left-col"></container>
             <container name="menu-product-container" htmlTag="div" htmlClass="right-col"></container>
         </referenceContainer>
         <move element="view.addto.wishlist" destination="menu-product-container" before="minicart"/>
         <move element="minicart" destination="menu-product-container" />
         <move element="top.search" destination="menu-product-container" />
-        <move element="logo" destination="logo-product-container" />
+        <move element="logo" destination="menu-product-container" />
 
 
         <referenceContainer name="product.info.stock.sku" remove="true"></referenceContainer>
