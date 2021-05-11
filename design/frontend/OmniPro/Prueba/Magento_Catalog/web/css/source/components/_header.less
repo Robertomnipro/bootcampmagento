@@ -5,7 +5,7 @@
             .logo{
                 margin: 0px;
                 float: none;
-                margin-right: 112px;
+                margin-right: 0px;
                 margin-left: 0px;
                 order: 1;
 
@@ -16,28 +16,43 @@
             .right-col{
                 display: flex;
                 flex-direction:row;
-                justify-content: center;
+                // justify-content: center;
                 align-items: center;
                 height: 80px;
                 .logo{
+                    position: relative;
+                    left: 21px;
                     order: 1;
                 }
                 .block-search{
                     margin: 0;
+                    order: 2;
+                    position: relative;
+                    left: 125px;
                     .control{
                         border-top: none;
-    
+                        position: relative;
+                        left: 115px;
+                        display: none;
+                        input[type=text]:checked{
+                            display: block;
+                        }
                     }
-                    order: 2;
+
                 }
                 .towishlist{
+                    position: relative;
                     content: @icon-heart;
                     order: 3;
+                    left: 150px;
 
                 }
                 .minicart-wrapper{
+                    margin-top: 0px;
                     .showcart{
                         content: @icon-bag;
+                        position: relative;
+                        left: 180px;
                     }
                     order: 4;
                 }
@@ -46,6 +61,8 @@
                     top: 0px;                                 
                     content: @icon-burger;
                     order: 5;
+                    left: 210px;
+                    
 
                 }
             }
