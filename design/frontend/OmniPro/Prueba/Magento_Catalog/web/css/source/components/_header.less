@@ -29,14 +29,30 @@
                     order: 2;
                     position: relative;
                     left: 125px;
-                    .control{
-                        border-top: none;
-                        position: relative;
-                        left: 115px;
-                        display: none;
-                        input[type=text]:checked{
-                            display: block;
+                    .block-content{
+                        .control{
+                            border-top: none;
+                            position: relative;
+                            left: 0px;
+                            input{
+                                left: 0px;
+                                top: 50px;
+                            }
+                            // display: none;
+                            // input[type=text]:checked{
+                            //     display: block;
+                            // }
                         }
+                        .active{
+                            input{
+                                position: absolute;
+                                z-index: 1000;
+                                left: 0px;
+                                top: 12px;
+                                width: 200px;
+                            }
+                        }
+
                     }
 
                 }
