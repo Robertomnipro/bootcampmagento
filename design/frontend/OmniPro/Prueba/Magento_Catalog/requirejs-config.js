@@ -1,7 +1,10 @@
 var config = {
-    map: {
-        '*': {
-            'scriptName':'OmniPro_Prueba/js/scriptname'
-            }
+    paths: {
+        slick:        'js/slick'
+    },
+    shim: {
+        slick: {
+            deps: ['jquery']
         }
-    };
+    }
+};
