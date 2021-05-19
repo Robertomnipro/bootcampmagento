@@ -1,0 +1,45 @@
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    .catalog-product-view{
+        .product-info-main{
+            .product-reviews-summary{
+                float: unset;
+                .rating-result{
+                    width: unset;
+                    vertical-align: unset;
+                }
+
+            }
+            .product-add-form{
+                padding-top: unset;
+                .product-options-wrapper{
+                    .swatch-attribute.size{
+                        .swatch-option{
+                            margin-right: 6px;
+                            padding: 8px;
+                            height: unset;
+                            background: unset;                  
+                        }
+                        .swatch-option.selected{
+                            background: black;
+                        }
+
+                    }
+                    .swatch-attribute.color{
+                        max-width: 375px;
+                        .swatch-option{
+                            margin-right: 6px;
+                            padding: unset;
+                            height: 40px;
+                            min-width: 70px;
+                            background: unset;                  
+                        }
+                    }
+
+                }
+            }
+            .product-info-price{
+                border-bottom: 1px solid #F9F8F6;
+            }
+        }
+    }
+}

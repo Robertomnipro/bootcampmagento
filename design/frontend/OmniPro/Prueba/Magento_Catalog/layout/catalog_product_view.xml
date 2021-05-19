@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+    <referenceBlock name="category.products.list">
+            <arguments>
+                <argument name="template" xsi:type="string">OmniPro_Prueba::product/list/items.phtml</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceContainer name="header-wrapper" htmlClass="bmg-header-container bmg-header-inverse container">
+            <container name="menu-product-container" htmlTag="div" htmlClass="right-col"></container>
+        </referenceContainer>
+        <move element="view.addto.wishlist" destination="menu-product-container" before="minicart"/>
+        <move element="minicart" destination="menu-product-container" />
+        <move element="top.search" destination="menu-product-container" />
+        <move element="logo" destination="menu-product-container" />
+
+
+        <referenceContainer name="product.info.stock.sku" remove="true"></referenceContainer>
+        <referenceContainer name="product.info.social" remove="true"></referenceContainer>
+        <referenceContainer name="footer-container" remove="true"></referenceContainer>
+    </body>
+</page>

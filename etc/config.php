@@ -339,13 +339,15 @@ return [
         'Klarna_Onsitemessaging' => 1,
         'Klarna_KpGraphQl' => 1,
         'OmniPro_Blog' => 1,
+        'OmniPro_DataPathTest' => 0,
         'PayPal_Braintree' => 1,
-        'OmniPro_Roberto' => 1,
         'PayPal_BraintreeGraphQl' => 1,
+        'OmniPro_Roberto' => 1,
         'Vertex_AddressValidationApi' => 1,
+        'OmniPro_Prueba' => 1,
         'Temando_ShippingRemover' => 1,
         'Vertex_Tax' => 1,
-        'OmniPro_Prueba' => 1,
+        'OmniPro_ProductUpdate' => 1,
         'Vertex_AddressValidation' => 1,
         'Yotpo_Yotpo' => 1
     ]

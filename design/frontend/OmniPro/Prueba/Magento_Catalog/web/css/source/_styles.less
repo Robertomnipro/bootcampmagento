@@ -1,0 +1,75 @@
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+    @import 'slick.less';
+    @import 'slick-theme.less';
+
+    .product-info-main{
+        text-align: center;
+
+        .product-add-form{
+            .swatch-attribute {
+                display: flex;
+                align-items: center;
+
+                .swatch-attribute-selected-option{
+                    display: none;
+                }
+            }
+            .swatch-attribute.size {
+                .swatch-option.selected{
+                    background-color: black;
+                    outline: none;
+                    color: #FFFFFF;
+                }
+            }
+            .swatch-attribute.manufacturer{
+                .swatch-option.selected{
+                    background-color: black;
+                    outline: none;
+                    color: #FFFFFF;
+                }
+            }
+            .swatch-attribute-options{
+                margin-left: 1rem;
+            }
+
+            .product-options-bottom{
+                .box-tocart{
+                    .tocart{
+                        background: #000000;
+                    }
+                    .field.qty{
+                        display: flex;
+                        align-items: center;
+
+                        .label{
+                            margin-bottom: 0;
+                            margin-right: 1rem;
+                        }
+
+                        .minus-qty, .plus-qty{
+                            background: #FFFFFF;
+                            border: none;
+                        }
+
+                        .qty-buttons{
+                            border: 1px solid #c2c2c2;
+                            display: flex;
+
+                            .control{
+                                .input-text.qty{
+                                    border: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .block.related{
+        .block-content.content{
+            text-align: -webkit-center;
+        }
+    }
+}
