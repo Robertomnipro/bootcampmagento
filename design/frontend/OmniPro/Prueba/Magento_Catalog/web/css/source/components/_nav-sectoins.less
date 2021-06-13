@@ -1,0 +1,25 @@
+// Common(style-m.css)
+& when(@media-common = true){
+    .catalog-product-view{
+        .right-col{
+            font-size: 20px;
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    
+    .nav-sections{
+        right: calc(-1 * (100% - 54px));
+        transition: right 0.3s;
+    }
+    .nav-open{
+        .nav-sections{
+            right: 0;   
+         left: unset;
+
+        }
+    }
+
+}   
+
+
